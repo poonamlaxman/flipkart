@@ -2,11 +2,19 @@
 
 <div class="flex items-center justify-between py-3 px-7 !bg-white z-1000  ">
   <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus-44005d.svg" alt="">
+  <div class="relative">
   <div class="bg-[#f0f5ff] h-10 flex items-center rounded-lg">
     <i class="fa-solid fa-magnifying-glass text-xl py-2 pl-3 pr-2 text-[#a4a7ab] "></i>
     <input type="text" placeholder="Search for Product, Brands and More"
-     class="bg-[#f0f5ff] min-w-[709px] max-h-10 text-[17px] outline-none text-[#000000] ">
+     class="bg-[#f0f5ff] min-w-[709px] max-h-10 text-[17px] outline-none text-[#000000] " [(ngModel)]="filternames">
   </div>
+  <div class="bg-[#fff] absolute w-full">
+         <div class="flex items-center justify-start" *ngFor="let item of productdata | filterpipe : filternames ">
+       <i class="fa-solid fa-magnifying-glass text-xl py-2 pl-3 pr-2 text-[#a4a7ab] "></i>
+         <p>{{item.category}}</p>
+         </div>         
+     </div>
+     </div>
   <div class="relative group">
     <a href="#" class="flex items-center hover:bg-[#2a55e5] hover:text-[#fff] hover:rounded-lg p-2 hover:p-2">
     <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-52e0dc.svg" alt="" class="mr-2 ">
