@@ -12,6 +12,11 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'flipkart';
     isOpen = false;
+
+    constructor(){
+      console.log("run");
+      
+    }
     menuItems = [
   'Beauty & Personal Care',
   "Men's Grooming",
@@ -46,5 +51,7 @@ export class AppComponent {
   { name: 'Pixel 8', brand: 'Google' },
   { name: 'OnePlus 11', brand: 'OnePlus' }
 ];
+
+
 
 }
