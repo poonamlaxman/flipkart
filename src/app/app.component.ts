@@ -1,12 +1,13 @@
-import { CommonModule, NgClass, NgStyle } from '@angular/common';
-import { Component, model } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { FilterpipePipe } from './filterpipe.pipe';
+import { DisableclickDirective } from './disableclick.directive';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule,  FormsModule, FilterpipePipe],
+  imports: [CommonModule, FormsModule, FilterpipePipe,DisableclickDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -14,6 +15,53 @@ export class AppComponent {
   title = 'flipkart';
     isOpen = false;
     filternames:string=''
+    searchshow:boolean=false;
+    clickhere(){
+     this.searchshow = true
+    }
+// @viewChild('searchbar',{static:true})searchBarRef!: ElementRef
+  @ViewChild('searchbar') searchbarref!: ElementRef;
+
+    // @HostListene r('window:scroll')
+    //   OnScroll(){
+    //     console.log("scrolling");
+    //   }
+    //   @HostListener('contextmenu')
+    //   onrightclick(event:any){
+    //     // event.preventDefault();
+        
+    //   }
+    enter(e:any) {
+  //  e.target= this.searchshow 
+  this.searchshow=true
+}
+
+leave(e:any) {
+    this.searchshow=false
+}
+    @HostListener('document:click',['$event'])
+    onclick(event:MouseEvent){
+      const eventsearch= this.searchbarref.nativeElement.target;
+
+      if(eventsearch){
+      this.searchshow=false;
+      }
+
+    }
+    getclick(event:MouseEvent){
+      const target=event.target as HTMLElement;
+      console.log('click element Tag',target.tagName);
+      console.log("classes",target.className);
+      console.log("id", target.id)
+      console.log("inner text", target.innerHTML.trim());
+      console.log("positon",{
+        x:event.clientX,
+        y:event.clientY
+      })
+      
+
+    }
+ 
     constructor(){
       console.log("run");
       
