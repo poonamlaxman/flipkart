@@ -48,19 +48,19 @@ leave(e:any) {
       }
 
     }
-    getclick(event:MouseEvent){
-      const target=event.target as HTMLElement;
-      console.log('click element Tag',target.tagName);
-      console.log("classes",target.className);
-      console.log("id", target.id)
-      console.log("inner text", target.innerHTML.trim());
-      console.log("positon",{
-        x:event.clientX,
-        y:event.clientY
-      })
+    // getclick(event:MouseEvent){
+    //   const target=event.target as HTMLElement;
+    //   console.log('click element Tag',target.tagName);
+    //   console.log("classes",target.className);
+    //   console.log("id", target.id)
+    //   console.log("inner text", target.innerHTML.trim());
+    //   console.log("positon",{
+    //     x:event.clientX,
+    //     y:event.clientY
+    //   })
       
 
-    }
+    // }
  
     constructor(){
       console.log("run");

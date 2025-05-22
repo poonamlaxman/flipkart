@@ -9,8 +9,9 @@
        <input type="text" #searchbar placeholder="Search for Product, Brands and More"
      class="bg-[#f0f5ff] min-w-[709px] max-h-10 text-[17px] outline-none text-[#000000] " (click)="leave($event)" [(ngModel)]="filternames" (click)="clickhere()"> -->
            <input type="text" #searchbar placeholder="Search for Product, Brands and More"
-     class="bg-[#f0f5ff] min-w-[709px] max-h-10 text-[17px] outline-none text-[#000000] "  [(ngModel)]="filternames" (click)="getclick($event)" >
+     class="bg-[#f0f5ff] min-w-[709px] max-h-10 text-[17px] outline-none text-[#000000] "  [(ngModel)]="filternames" >
   </div>
+  <!-- (click)="getclick($event)"  -->
   
        <!-- <input type="text" (mouseenter)="enter($event)" (click)="leave($event)" keu placeholder="Search for Product, Brands and More"
      class="bg-[#f0f5ff] min-w-[709px] max-h-10 text-[17px] outline-none text-[#000000] " [(ngModel)]="filternames" >
@@ -30,7 +31,8 @@
 </div> -->
 
      </div>
-  <div class="relative group " (click)="getclick($event)">
+  <div class="relative group " >
+    <!-- (click)="getclick($event)" -->
     <a href="#" class="flex items-center hover:bg-[#2a55e5] hover:text-[#fff] hover:rounded-lg p-2 hover:p-2">
     <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-52e0dc.svg" alt="" class="mr-2 ">
     <p class="mr-2">Login</p>
